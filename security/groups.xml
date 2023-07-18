@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.module.category" id="module_qualitative">
+        <field name="name">Qualitative Analysis</field>
+        <field name="sequence">21</field>
+        <field name="visible" eval="0"/>
+    </record>
+    <record id="qualitative_hr" model="res.groups">
+        <field name="name">HR</field>
+        <field name="category_id" ref="module_qualitative"/>
+    </record>
+    <record id="qualitative_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_qualitative"/>
+    </record>
+
+</odoo>

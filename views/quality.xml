@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="logic_qualitative_analysis_view" model="ir.ui.view">
+        <field name="name">Qualitative Analysis</field>
+        <field name="model">base.qualitative.analysis</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Quality">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" options="{'no_create': True}"/>
+                            <field name="added_date"/>
+                            <field name="attribute"/>
+                            <field name="performance" widget="priority"/>
+                            <field name="current_user_id" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="logic_quality_tree" model="ir.ui.view">
+        <field name="name">Quality</field>
+        <field name="model">base.qualitative.analysis</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="added_date"/>
+                <field name="performance" widget="priority"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="base_quality_action">
+        <field name="name">Quality</field>
+        <field name="res_model">base.qualitative.analysis</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Qualitative Analysis" id="menu_quality_view"
+              action="base_quality_action"
+              web_icon="qualitative_analysis/static/description/icon.jpg"
+              sequence="1"/>
+    <menuitem name="Qualitative Analysis" id="menu_logic_qualitative_analysis"
+              action="base_quality_action"
+              parent="menu_quality_view"
+              sequence="1"/>
+</odoo>

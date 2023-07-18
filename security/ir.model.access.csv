@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_emp_manager,access_emp,model_base_qualitative_analysis,qualitative_manager,1,1,1,1
+access_hr,access_emp,model_base_qualitative_analysis,qualitative_hr,1,1,1,1
+access_emp_attributes,access_emp,model_quality_attributes,,1,1,1,1
