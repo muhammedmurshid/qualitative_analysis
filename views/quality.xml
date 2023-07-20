@@ -5,17 +5,41 @@
         <field name="model">base.qualitative.analysis</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
-            <form string="Quality">
+            <form string="Quality" duplicate="0">
                 <sheet>
                     <group>
                         <group>
                             <field name="name" options="{'no_create': True}"/>
                             <field name="added_date"/>
-                            <field name="attribute"/>
-                            <field name="performance" widget="priority"/>
+                            <field name="quality_type"/>
+                            <field name="total_performance" invisible="1"/>
                             <field name="current_user_id" invisible="1"/>
+                            <!--                            <field name="selected_partner_ids" widget="many2many_tags"/>-->
+
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Attributes" name="attribute">
+                            <field name="attribute_ids">
+                                <tree string="Attributes" editable="bottom">
+                                    <field name="attribute"/>
+                                    <field name="performance" widget="priority"/>
+                                    <field name="performance_no" invisible="1"/>
+                                    <field name="stars_count" invisible="1"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2">
+                                <field name="total_stars_count" invisible="1"/>
+                                <field name="total_performance" invisible="1"/>
+                                <!--                                <div><field name="work_performance"/>(%%)</div>-->
+                                <div name="work_performance">
+                                    <label for="work_performance" string="Work Performance"/>
+                                    <field name="work_performance" class="oe_inline"/>
+                                    (%%)
+                                </div>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
@@ -32,7 +56,12 @@
             <tree>
                 <field name="name"/>
                 <field name="added_date"/>
-                <field name="performance" widget="priority"/>
+                <field name="quality_type"/>
+                <!--                <field name="work_performance" widget="percentage"/>-->
+
+                <field name="work_performance"/>
+
+
             </tree>
 
         </field>
@@ -46,7 +75,7 @@
 
     <menuitem name="Qualitative Analysis" id="menu_quality_view"
               action="base_quality_action"
-              web_icon="qualitative_analysis/static/description/icon.jpg"
+              web_icon="qualitative_analysis/static/description/icon.png"
               sequence="1"/>
     <menuitem name="Qualitative Analysis" id="menu_logic_qualitative_analysis"
               action="base_quality_action"

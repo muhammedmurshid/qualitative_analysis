@@ -8,3 +8,4 @@ class QualitativeAttributes(models.Model):
     _rec_name = 'attribute_type'
 
     attribute_type = fields.Text(string='Attribute')
+
