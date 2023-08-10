@@ -12,7 +12,7 @@
                             <field name="name" options="{'no_create': True}"/>
                             <field name="added_date"/>
                             <field name="quality_type"/>
-                            <field name="total_performance" invisible="1"/>
+<!--                            <field name="_total_performance" invisible="1"/>-->
                             <field name="current_user_id" invisible="1"/>
                             <!--                            <field name="selected_partner_ids" widget="many2many_tags"/>-->
 

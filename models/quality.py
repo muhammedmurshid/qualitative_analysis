@@ -53,9 +53,11 @@ class QualitativeAnalysis(models.Model):
 
     work_performance = fields.Float(string='Performance (%)', compute='_compute_percentage', store=True)
 
-    _sql_constraints = [
-        ('attribute_uniq', 'unique (attribute)', 'Duplicate Attribute is not allowed !')
-    ]
+
+
+    # _sql_constraints = [
+    #     ('attribute_uniq', 'unique (attribute)', 'Duplicate Attribute is not allowed !')
+    # ]
 
 
 class QualitativeAttributesTree(models.Model):
@@ -71,6 +73,14 @@ class QualitativeAttributesTree(models.Model):
     stars_count = fields.Integer(string='Stars Count', default=5)
     performance_no = fields.Float(string='Performance No', compute='_compute_performance_no', store=True)
     int_field = fields.Integer(string='Int Field')
+
+    @api.onchange('attribute')
+    def attribute_id_change(self):
+        print('attribute_id_change')
+        filter_product_ids = [data.attribute.id for data in self.attr_id.attribute_ids]
+        values = {}
+        values['domain'] = {'attribute': [('id', 'not in', filter_product_ids)]}
+        return values
 
     # this is the performance number added another field
     @api.depends('performance')
