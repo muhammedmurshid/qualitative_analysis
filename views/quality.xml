@@ -26,6 +26,7 @@
                                     <field name="performance" widget="priority"/>
                                     <field name="performance_no" invisible="1"/>
                                     <field name="stars_count" invisible="1"/>
+                                    <field name="remarks"/>
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2">

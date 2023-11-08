@@ -73,6 +73,7 @@ class QualitativeAttributesTree(models.Model):
     stars_count = fields.Integer(string='Stars Count', default=5)
     performance_no = fields.Float(string='Performance No', compute='_compute_performance_no', store=True)
     int_field = fields.Integer(string='Int Field')
+    remarks = fields.Char(string='Remarks')
 
     @api.onchange('attribute')
     def attribute_id_change(self):
