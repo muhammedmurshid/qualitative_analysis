@@ -4,3 +4,15 @@ access_emp_manager,access_emp,model_base_qualitative_analysis,qualitative_manage
 access_hr,access_emp,model_base_qualitative_analysis,qualitative_hr,1,1,1,1
 access_emp_attributes,access_emp,model_quality_attributes,,1,1,1,1
 access_attr_tree,access_emp,model_attribute_tree,,1,1,1,1
+access_quantitative_attr_tree,access_emp,model_quantitative_attribute_tree,,1,1,1,1
+access_quantitative_attribute,access_emp,model_quantitative_attributes,qualitative_hr,1,1,1,1
+access_quantitative_attribute_heads,access_emp,model_quantitative_attributes,qualitative_heads,1,0,0,0
+access_emp_heads,access_emp,model_base_qualitative_analysis,qualitative_heads,1,0,0,0
+access_quantitative_heads,access_emp,model_quantitative_analysis,qualitative_heads,1,1,1,1
+
+
+
+
+
+
+

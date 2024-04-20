@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="logic_qualitative_analysis_view" model="ir.ui.view">
-        <field name="name">Qualitative Analysis</field>
-        <field name="model">base.qualitative.analysis</field>
+    <record id="logic_quantitative_analysis_form_view" model="ir.ui.view">
+        <field name="name">Quantitative Analysis</field>
+        <field name="model">quantitative.analysis</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
-            <form string="Quality" duplicate="0">
+            <form string="Quantitative Analysis" duplicate="0">
                 <sheet>
                     <group>
                         <group>
-                            <field name="name" options="{'no_create': True}"/>
+                            <field name="employee_id" options="{'no_create': True}"/>
                             <field name="added_date"/>
                             <field name="quality_type"/>
-<!--                            <field name="_total_performance" invisible="1"/>-->
-                            <field name="current_user_id" invisible="1"/>
-                            <!--                            <field name="selected_partner_ids" widget="many2many_tags"/>-->
-
                         </group>
                     </group>
                     <notebook>
@@ -25,7 +21,7 @@
                                     <field name="attribute"/>
                                     <field name="performance" widget="priority"/>
                                     <field name="performance_no" invisible="1"/>
-                                    <field name="stars_count" invisible="1"/>
+<!--                                    <field name="stars_count" invisible="1"/>-->
                                     <field name="remarks"/>
                                 </tree>
                             </field>
@@ -50,36 +46,27 @@
             </form>
         </field>
     </record>
-    <record id="logic_quality_tree" model="ir.ui.view">
-        <field name="name">Quality</field>
-        <field name="model">base.qualitative.analysis</field>
+    <record id="logic_quantitative_tree" model="ir.ui.view">
+        <field name="name">Quantitative</field>
+        <field name="model">quantitative.analysis</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="employee_id" options="{'no_create': True}"/>
                 <field name="added_date"/>
                 <field name="quality_type"/>
-                <!--                <field name="work_performance" widget="percentage"/>-->
-
-                <field name="work_performance"/>
-
-
             </tree>
 
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="base_quality_action">
-        <field name="name">Quality</field>
-        <field name="res_model">base.qualitative.analysis</field>
+    <record model="ir.actions.act_window" id="base_quantitative_analysis_action">
+        <field name="name">Quantitative Analysis</field>
+        <field name="res_model">quantitative.analysis</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Ratings" id="menu_quality_view"
-              action="base_quality_action"
-              web_icon="qualitative_analysis/static/description/icon.jpg"
-              sequence="1"/>
-    <menuitem name="Qualitative Analysis" id="menu_logic_qualitative_analysis"
-              action="base_quality_action"
+    <menuitem name="Quantitative Analysis" id="menu_logic_quantitative_analysis"
+              action="base_quantitative_analysis_action"
               parent="menu_quality_view"
-              sequence="1"/>
+              sequence="3"/>
 </odoo>

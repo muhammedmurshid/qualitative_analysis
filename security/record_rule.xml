@@ -10,4 +10,16 @@
         <field name="perm_create" eval="True"/>
         <field name="perm_unlink" eval="True"/>
     </record>
+    <record id="qualitative_heads_rule" model="ir.rule">
+        <field name="name">Qualitative Heads</field>
+        <field name="model_id" ref="model_base_qualitative_analysis"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('qualitative_heads'))]"/>
+    </record>
+    <record id="qualitative_attributes_heads_rule" model="ir.rule">
+        <field name="name">Qualitative Attributes Heads</field>
+        <field name="model_id" ref="model_quantitative_attributes"/>
+        <field name="domain_force">[('department_head', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('qualitative_heads'))]"/>
+    </record>
 </odoo>

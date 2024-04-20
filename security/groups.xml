@@ -13,5 +13,9 @@
         <field name="name">Manager</field>
         <field name="category_id" ref="module_qualitative"/>
     </record>
+    <record id="qualitative_heads" model="res.groups">
+        <field name="name">Heads</field>
+        <field name="category_id" ref="module_qualitative"/>
+    </record>
 
 </odoo>

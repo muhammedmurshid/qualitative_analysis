@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="logic_quantitative_attributes_view" model="ir.ui.view">
+        <field name="name">Quantitative Attributes</field>
+        <field name="model">quantitative.attributes</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Quality">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="department_id" options="{'no_create': True}"/>
+                            <field name="department_head" readonly="1"/>
+                            <field name="attribute_type"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="logic_quantitative_attributes_tree" model="ir.ui.view">
+        <field name="name">Attributes</field>
+        <field name="model">quantitative.attributes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="department_id" options="{'no_create': True}"/>
+                <field name="attribute_type"/>
+
+            </tree>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="logic_quantitative_attributes_action">
+        <field name="name">Attributes</field>
+        <field name="res_model">quantitative.attributes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Quantitative Attributes" id="menu_logic_quantitative_attributes"
+              action="logic_quantitative_attributes_action"
+              parent="menu_quality_view"
+              sequence="4"/>
+</odoo>
