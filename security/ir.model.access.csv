@@ -9,6 +9,8 @@ access_quantitative_attribute,access_emp,model_quantitative_attributes,qualitati
 access_quantitative_attribute_heads,access_emp,model_quantitative_attributes,qualitative_heads,1,0,0,0
 access_emp_heads,access_emp,model_base_qualitative_analysis,qualitative_heads,1,0,0,0
 access_quantitative_heads,access_emp,model_quantitative_analysis,qualitative_heads,1,1,1,1
+access_quantitative_hr,access_emp,model_quantitative_analysis,qualitative_hr,1,1,1,1
+
 
 
 
